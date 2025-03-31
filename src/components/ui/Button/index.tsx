@@ -10,9 +10,10 @@ export const Button = ({
   buttonTitle,
   iconName,
   onPress,
+  extraStyles,
 }: ButtonProps): JSX.Element => {
   return (
-    <Pressable onPress={onPress} style={styles.buttonContainer}>
+    <Pressable onPress={onPress} style={[styles.buttonContainer, extraStyles]}>
       <LinearGradient
         colors={[colors.darkBlue, colors.purple1000]}
         locations={[0.1, 1]}
