@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 // should be taken from env file, env integration was not done because of its a case study
 const firebaseConfig = {
@@ -14,3 +15,4 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+export const firestore = getFirestore(app);
