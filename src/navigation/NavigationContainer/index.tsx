@@ -3,24 +3,22 @@ import {
   createNavigationContainerRef,
   NavigationContainer as RNNavigationContainer,
 } from "@react-navigation/native";
-import { LinearGradient } from "expo-linear-gradient";
-import { styles } from "./styles";
+import { StatusBar, ImageBackground, View } from "react-native";
 import { colors } from "../../theme";
+import { styles } from "./styles";
+import { images } from "../../utils";
 
 export const navigationRef = createNavigationContainerRef();
 
 export const NavigationContainer = ({ children }): JSX.Element => {
   return (
     <RNNavigationContainer ref={navigationRef}>
-      <LinearGradient
-        colors={[colors.dark1000, colors.purple1000, colors.dark1000]}
-        locations={[0, 1, 0.1]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 3, y: 2.1 }}
-        style={styles.gradient}
-      >
-        {children}
-      </LinearGradient>
+      <StatusBar barStyle="light-content" backgroundColor={colors.dark1000} />
+      <View style={styles.container}>
+        <ImageBackground source={images.backGradient} style={styles.bgImage}>
+          {children}
+        </ImageBackground>
+      </View>
     </RNNavigationContainer>
   );
 };
