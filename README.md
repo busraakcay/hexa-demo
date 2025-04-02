@@ -84,11 +84,11 @@ hexa-demo/
 
 ## 📸 Screenshots
 
-![Input Screen](assets/app/s1.png)
-![Input Screen](assets/app/s2.png)
-![Input Screen](assets/app/s3.png)
-![Input Screen](assets/app/s4.png)
-![Output Screen](assets/app/s5.png)
+![Input Screen](assets/images/app/s1.png)
+![Input Screen](assets/images/app/s2.png)
+![Input Screen](assets/images/app/s3.png)
+![Input Screen](assets/images/app/s4.png)
+![Output Screen](assets/images/app/s5.png)
 
 ---
 
