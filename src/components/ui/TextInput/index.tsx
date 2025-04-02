@@ -30,12 +30,7 @@ export const TextInput = ({ text, setText }: TextInputProps): JSX.Element => {
           onBlur={() => setIsFocused(false)}
         />
         <View>
-          <Text
-            small
-            thin
-            extraStyles={styles.maxLength}
-            text={`${text.length}/${maxLength}`}
-          />
+          <Text extraSmall thin text={`${text.length}/${maxLength}`} />
         </View>
       </View>
     </View>

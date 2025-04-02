@@ -21,7 +21,4 @@ export const styles = StyleSheet.create({
     textAlignVertical: "top",
     height: 135,
   },
-  maxLength: {
-    fontSize: 11,
-  },
 });

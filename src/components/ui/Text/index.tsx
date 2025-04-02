@@ -10,9 +10,10 @@ export const Text = ({
   bold,
   thin,
   small,
+  extraSmall,
   extraStyles,
 }: TextProps): JSX.Element => {
-  const styles = textStyles({ bold, small, title, subtitle, thin });
+  const styles = textStyles({ bold, small, extraSmall, title, subtitle, thin });
   return (
     <RNText allowFontScaling={false} style={[styles.text, extraStyles]}>
       {text}
