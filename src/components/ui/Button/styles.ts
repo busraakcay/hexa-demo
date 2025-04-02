@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     overflow: "hidden",
   },
   outerContainer: {
-    paddingVertical: 24,
+    paddingVertical: 20,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",

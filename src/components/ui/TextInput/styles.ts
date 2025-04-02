@@ -23,6 +23,5 @@ export const styles = StyleSheet.create({
   },
   maxLength: {
     fontSize: 11,
-    color: colors.dark500,
   },
 });

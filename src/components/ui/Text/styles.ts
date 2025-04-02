@@ -2,14 +2,20 @@ import { StyleSheet } from "react-native";
 import { colors } from "../../../theme";
 import { TextOptionProps } from "../../../types";
 
-export const textStyles = ({ bold, small, title, thin }: TextOptionProps) =>
+export const textStyles = ({
+  bold,
+  small,
+  title,
+  subtitle,
+  thin,
+}: TextOptionProps) =>
   StyleSheet.create({
     text: {
-      color: colors.white,
-      fontWeight: bold || title ? "800" : thin ? "300" : "400",
-      fontSize: title ? 20 : small ? 11 : 16,
+      color: thin ? colors.dark500 : subtitle ? colors.dark300 : colors.white,
+      fontWeight: bold || title ? "700" : thin || subtitle ? "300" : "400",
+      fontSize: title ? 20 : small ? 13 : 16,
       lineHeight: title ? 25 : thin ? 18 : 21,
-      letterSpacing: bold || title ? 0.5 : 0.4,
+      letterSpacing: title ? 0.5 : 0,
       fontFamily: bold || title ? "ManropeBold" : "ManropeRegular",
     },
   });

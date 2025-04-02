@@ -32,6 +32,7 @@ export const TextInput = ({ text, setText }: TextInputProps): JSX.Element => {
         <View>
           <Text
             small
+            thin
             extraStyles={styles.maxLength}
             text={`${text.length}/${maxLength}`}
           />

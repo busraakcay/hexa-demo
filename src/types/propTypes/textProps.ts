@@ -4,6 +4,7 @@ export interface TextOptionProps {
   bold?: boolean;
   small?: boolean;
   title?: boolean;
+  subtitle?: boolean;
   thin?: boolean;
 }
 
