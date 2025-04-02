@@ -19,6 +19,9 @@ export const useGeneratePrompt = () => {
         { merge: true }
       );
 
+      // setError(true);
+      // setLoading(false);
+
       const generatedPrompt = await getDoc(docRef);
       if (generatedPrompt.exists()) {
         setData(generatedPrompt.data() as GeneratedDataElements);

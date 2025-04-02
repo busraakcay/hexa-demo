@@ -1,4 +1,6 @@
+import { GeneratedDataElements } from "./propTypes";
+
 export type RootStackParamList = {
   InputScreen: undefined;
-  OutputScreen: undefined;
+  OutputScreen: { data: GeneratedDataElements };
 };

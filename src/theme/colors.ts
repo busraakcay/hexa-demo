@@ -1,12 +1,17 @@
 export const colors = {
   white: "#FFFFFF",
   white1000: "#E4E4E7",
+  dark100: "#18181B",
+  dark300: "#D4D4D8",
   dark500: "#71717A",
   dark1000: "#09090B",
   dark2000: "#27272A",
+  dark3000: "#27272A",
   purple1000: "#943DFF",
   purple1000RGBA: "rgba(148, 61, 255, 0.06)",
   darkBlue: "#2938DC",
-  darkBlue1000: "#282c57",
+  darkBlue1000: "#282C57",
   darkBlueRGBA: "rgba(41, 56, 220, 0.06)",
+  red1000: "#EF4444",
+  red1000RGBA: "rgba(239, 68, 68, 0.7)",
 };
