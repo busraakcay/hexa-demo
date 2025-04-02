@@ -8,10 +8,12 @@ import { styles } from "./styles";
 import { useGeneratePrompt, useGetDocs } from "../../hooks";
 
 export const InputScreen = ({ navigation }: InputScreenProps): JSX.Element => {
+  // States to handle prompt text, selected style, and chip visibility
   const [prompt, setPrompt] = useState("");
   const [selectedStyle, setSelectedStyle] = useState("");
   const [chipVisible, setChipVisible] = useState(false);
 
+  // Custom hooks for fetching documents and generating the prompt
   const { loading, error, data, getDocsFromFirestore } = useGetDocs();
   const {
     loading: logoLoading,
@@ -20,13 +22,16 @@ export const InputScreen = ({ navigation }: InputScreenProps): JSX.Element => {
     generatePrompt,
   } = useGeneratePrompt();
 
+  // Fetching logo styles from Firestore once the component mounts
   useEffect(() => {
     getDocsFromFirestore("logoStyles");
   }, []);
 
+  // Animation values for chip component visibility
   const translateY = useRef(new Animated.Value(-20)).current;
   const opacity = useRef(new Animated.Value(0)).current;
 
+  // Handling animation when chip becomes visible
   useEffect(() => {
     if (chipVisible) {
       Animated.parallel([
@@ -44,15 +49,17 @@ export const InputScreen = ({ navigation }: InputScreenProps): JSX.Element => {
     }
   }, [chipVisible]);
 
+  // Handles the press action when generating a prompt
   const handleOnPress = useCallback(() => {
-    setChipVisible(true);
-    generatePrompt(prompt, selectedStyle);
+    setChipVisible(true); // Show the chip
+    generatePrompt(prompt, selectedStyle); // Generate the prompt based on the input
     if (!logoData) {
-      setPrompt("");
-      setSelectedStyle("");
+      setPrompt(""); // Clear prompt if no data is available
+      setSelectedStyle(""); // Reset selected style
     }
   }, [prompt, selectedStyle]);
 
+  // Navigation handler for moving to the OutputScreen
   const handleNavigation = () => {
     navigation.navigate("OutputScreen", { data: logoData });
   };
@@ -64,16 +71,19 @@ export const InputScreen = ({ navigation }: InputScreenProps): JSX.Element => {
         style={appStyles.scrollViewContainer}
       >
         <View style={styles.innerContainer}>
+          {/* Conditionally rendering the chip component with animation */}
           {chipVisible && (
             <Animated.View style={{ transform: [{ translateY }], opacity }}>
               <Chip
-                data={logoData}
-                loading={logoLoading}
-                error={logoError}
-                onPress={logoData ? handleNavigation : handleOnPress}
+                data={logoData} // Pass data for chip display
+                loading={logoLoading} // Show loading spinner if necessary
+                error={logoError} // Show error icon if needed
+                onPress={logoData ? handleNavigation : handleOnPress} // Handle press action
               />
             </Animated.View>
           )}
+
+          {/* Input prompt section */}
           <View style={appStyles.flexRowSpaceBetween}>
             <Text title text="Enter Your Prompt" />
             <View style={appStyles.flexRow}>
@@ -86,15 +96,18 @@ export const InputScreen = ({ navigation }: InputScreenProps): JSX.Element => {
           </View>
         </View>
 
+        {/* Logo Styles selection, only visible when data is loaded */}
         {!loading && !error && (
           <View style={styles.logoStyleContainer}>
             <Text title text="Logo Styles" />
             <ScrollView horizontal>
+              {/* Default 'No Style' option */}
               <LogoStyle
                 title=""
                 isSelected={selectedStyle === ""}
                 setSelectedStyle={setSelectedStyle}
               />
+              {/* Iterating through available logo styles */}
               {data.map((item) => (
                 <LogoStyle
                   key={item.id}
@@ -108,10 +121,11 @@ export const InputScreen = ({ navigation }: InputScreenProps): JSX.Element => {
           </View>
         )}
 
+        {/* Create button */}
         <View style={styles.buttonContainer}>
           <Button
-            iconName={images.stars}
-            onPress={handleOnPress}
+            iconName={images.stars} // Button icon
+            onPress={handleOnPress} // Trigger prompt generation on press
             buttonTitle="Create"
           />
         </View>

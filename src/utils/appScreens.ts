@@ -1,7 +1,7 @@
 import { InputScreen, OutputScreen } from "../screens";
-import { StackScreenProps } from "../types";
+import { RootStackParamList, StackScreenProps } from "../types";
 
-export const appScreens: StackScreenProps[] = [
+export const appScreens: Array<StackScreenProps<keyof RootStackParamList>> = [
   {
     name: "InputScreen",
     component: InputScreen,

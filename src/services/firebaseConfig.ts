@@ -1,8 +1,13 @@
-// Import the functions you need from the SDKs you need
+// Import the necessary functions from the Firebase SDK
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// should be taken from env file, env integration was not done because of its a case study
+/**
+ * Firebase configuration object.
+ *
+ * ⚠️ This configuration should ideally be stored in an environment variable.
+ * Since this is a case study, the values are hardcoded for simplicity.
+ */
 const firebaseConfig = {
   apiKey: "AIzaSyDOQiETcSjKW4oICnIsidVj6uwrMOaXmsU",
   authDomain: "hexa-ai-demo.firebaseapp.com",
@@ -13,6 +18,8 @@ const firebaseConfig = {
   measurementId: "G-JTY4NKQ3SL",
 };
 
-// Initialize Firebase
+// Initialize Firebase app
 export const app = initializeApp(firebaseConfig);
+
+// Initialize Firestore database instance
 export const firestore = getFirestore(app);
