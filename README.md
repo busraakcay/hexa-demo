@@ -76,9 +76,9 @@ hexa-demo/
 
 ## 📄 Usage
 
-**Prompt Creation:** Users can input a text prompt and generate results. The "Create" button triggers an animated Chip component.
-**Logo Styles:** Users can select logo styles fetched from Firebase.
-**Navigation:** Navigate seamlessly between InputScreen and OutputScreen.
+- **Prompt Creation:** Users can input a text prompt and generate results. The "Create" button triggers an animated Chip component.
+- **Logo Styles:** Users can select logo styles fetched from Firebase.
+- **Navigation:** Navigate seamlessly between InputScreen and OutputScreen.
 
 ---
 
