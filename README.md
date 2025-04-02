@@ -82,6 +82,16 @@ hexa-demo/
 
 ---
 
+## 📸 Screenshots
+
+![Input Screen](assets/app/s1.png)
+![Input Screen](assets/app/s2.png)
+![Input Screen](assets/app/s3.png)
+![Input Screen](assets/app/s4.png)
+![Output Screen](assets/app/s5.png)
+
+---
+
 ## 🛠️ Installation
 
 Follow these steps to set up and run the project:
